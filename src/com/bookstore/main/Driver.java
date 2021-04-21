@@ -13,6 +13,9 @@ public class Driver {
 		BookStore bookStore = new BookStore();
 		
 		
+		//Some Example Object Creations are below
+		//Unlike the others Book class requires you to specify Writer and Publiher name in the constructor
+		//In order to make sure if such record exists or if not to create it so not to catch a foreign key violation
 		Publisher publisher = new Publisher();
 		publisher.setPublisher_name("Ayrıntı Yayınları");
 		Writer writer = new Writer();
