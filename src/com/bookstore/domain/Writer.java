@@ -12,6 +12,9 @@ public class Writer extends Element{
 		this.id = ++counter;
 		BookStore.bookStoreElementsToInsert.add(0, this);
 	}
+	public Writer(int id) {
+		this.id = id;
+	}
 	public int getId() {
 		return id;
 	}

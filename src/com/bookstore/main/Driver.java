@@ -16,6 +16,10 @@ public class Driver {
 		//Some Example Object Creations are below
 		//Unlike the others Book class requires you to specify Writer and Publiher name in the constructor
 		//In order to make sure if such record exists or if not to create it so not to catch a foreign key violation
+		
+		
+		/*INSERT EXAMPLES*/
+		
 		Publisher publisher = new Publisher();
 		publisher.setPublisher_name("Ayrıntı Yayınları");
 		Writer writer = new Writer();
@@ -41,12 +45,37 @@ public class Driver {
 		Publisher publisher4 = new Publisher();
 		publisher4.setPublisher_name("Ithaki Yayınları");
 		
-		try {
-			bookStore.persist();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		bookStore.persist();
+
+		/*UPDATE EXAMPLES*/
 		
+		Publisher publisher5 = (Publisher) bookStore.get(Publisher.class, 2);
+		System.out.println("Publisher Name: " + publisher5.getPublisher_name());
+		publisher5.setPublisher_name("Kabalcı Yayınları");
 		
+		Writer writer3 = (Writer) bookStore.get(Writer.class, 3);
+		System.out.println("Writer Name: " + writer3.getWriter_name());
+		writer3.setWriter_name("Tomris Uyar");
+
+		Book book4 = (Book) bookStore.get(Book.class, 3);
+		System.out.println("Book Name: " + book4.getBook_name());
+		book4.setBook_name("Göğe Bakma Durağı");
+		
+		bookStore.persist();
+		
+		Publisher publisher6 = (Publisher) bookStore.get(Publisher.class, 2);
+		System.out.println("Updated Publisher Name: " + publisher6.getPublisher_name());
+		
+		Writer writer4 = (Writer) bookStore.get(Writer.class, 3);
+		System.out.println("Updated Writer Name: " + writer4.getWriter_name());
+		
+		Book book5 = (Book) bookStore.get(Book.class, 3);
+		System.out.println("Updated Book Name: " + book5.getBook_name());
+
+
+
 	}
 }
+
+
+

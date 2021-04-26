@@ -12,7 +12,9 @@ public class Publisher extends Element{
 		this.id = ++counter;
 		BookStore.bookStoreElementsToInsert.add(0, this);
 	}
-	
+	public Publisher(int id) {
+		this.id = id;
+	}
 	public int getId() {
 		return id;
 	}

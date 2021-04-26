@@ -46,6 +46,9 @@ public class Book extends Element{
 		}
 		BookStore.bookStoreElementsToInsert.add(BookStore.bookStoreElementsToInsert.size(),this);
 	}
+	public Book(int id) {
+		this.id = id;
+	}
 	
 	public int getId() {
 		return id;
